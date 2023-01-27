@@ -20,7 +20,7 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <img class="logo" src="{{ asset('images/Logo.png') }}" alt="Logo" style="height: 50px;">
@@ -38,7 +38,7 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto">
+                    <ul class="navbar-nav menu-nav ms-auto me-2">
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">Home</a>
                         </li>
@@ -51,19 +51,20 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">Contact Us</a>
                         </li>
+                    </ul>
+                    <ul class="navbar-nav">
                         <!-- Authentication Links -->
                         @guest
-                            @if (Route::has('login'))
+                            @if (Route::has('register'))
                                 <li class="nav-item me-2">
-                                    <a class="nav-link btn btn-outline-dark"
-                                        href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="btn btn-outline-dark px-4"
+                                        href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
-
-                            @if (Route::has('register'))
+                            @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link btn btn-outline-dark"
-                                        href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="btn btn-outline-dark px-4"
+                                        href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
                         @else
