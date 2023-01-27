@@ -1,0 +1,17 @@
+@font-face {
+    font-family: Mermaid;
+    src: url('/fonts/Mermaid.tff');
+}
+
+.btn {
+    border-radius: 99px;
+}
+
+.menu-nav .nav-item {
+    margin: 5px 10px;
+}
+
+h1 {
+    font-family: 'Mermaid', sans-serif;
+
+}

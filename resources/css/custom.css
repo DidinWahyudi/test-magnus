@@ -1,0 +1,18 @@
+.btn {
+    border-radius: 99px;
+}
+
+.menu-nav .nav-item {
+    margin: 5px 10px;
+}
+
+.card-form-destinantion {
+    border: unset;
+    border-radius: 99px;
+    box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+}
+
+.section-hero {
+    background: url('images/img-gradient.jpg');
+    background-size: cover;
+}
