@@ -10,6 +10,7 @@
     border: unset;
     border-radius: 99px;
     box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+    background-color: white;
 }
 
 .card-form-destinantion .form-control,
@@ -43,19 +44,62 @@
 /* image hero */
 .image-hero {
     position: relative;
-    border: red 2px solid;
-    height: 650px;
+    height: 704px;
 }
 
 .image-travel-front {
     position: absolute;
     top: 0px;
-    left: 0px;
+    left: 5px;
     z-index: 2;
 }
 
 .image-travel-back {
     position: absolute;
-    top: 150px;
-    right: 0px;
+    top: 200px;
+    right: 5px;
+}
+
+.bubble-1 {
+    position: absolute;
+    top: 80px;
+    left: -15px;
+    z-index: 3;
+    background-color: #EEF0FF;
+    border: 4px solid white;
+    border-radius: 99px;
+
+}
+
+.bubble-2 {
+    position: absolute;
+    top: 90px;
+    left: 345px;
+    z-index: 3;
+    background-color: #FFF1FF;
+    border: 4px solid white;
+    border-radius: 99px;
+
+}
+
+.bubble-3 {
+    position: absolute;
+    top: 400px;
+    left: 345px;
+    z-index: 3;
+    background-color: white;
+    border: 4px solid white;
+    border-radius: 99px;
+
+}
+
+.destinantion-form {
+    position: relative;
+    z-index: 3;
+}
+
+.card {
+    box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+    border: unset;
+    border-radius: 12px;
 }

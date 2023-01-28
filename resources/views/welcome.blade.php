@@ -4,26 +4,52 @@
     <section class="section-hero">
         {{-- hero --}}
         <div class="container py-5">
-            <div class="row align-items-center g-5 py-5">
-                <div class="col-lg-7">
+            <div class="row align-items-top py-5">
+                <div class="col-lg-7 mt-5">
                     <p class="" style="color:grey; font-size: 1rem;">The vacation you deserve is closer than you think
                         😍</p>
                     <h1 class="mb-4" style="font-size: 4rem;">Lifre is short <br>and the world 🌏 <br>is wide! 🏖️</h1>
-                    <div class="card card-form-destinantion p-3 ">
+
+                </div>
+                <div class="col-lg-5 image-hero">
+                    <div class="bubble-1 p-3">
+                        <img src="{{ asset('icons/airplane.png') }}" alt="bubble" style="height: 45px;">
+                    </div>
+                    <div class="image-travel-front">
+                        <img src="{{ asset('images/img-new-travel-1.jpg') }}" class="d-block mx-lg-auto img-fluid"
+                            alt="Bootstrap Themes" loading="lazy">
+                    </div>
+
+                    <div class="bubble-2 p-3">
+                        <img src="{{ asset('icons/mountains.png') }}" alt="bubble" style="height: 45px;">
+                    </div>
+
+                    <div class="bubble-3 p-3">
+                        <img src="{{ asset('icons/ship.png') }}" alt="bubble" style="height: 45px;">
+                    </div>
+
+                    <div class="image-travel-back">
+                        <img src="{{ asset('images/travel-2.jpg') }}" class="d-block mx-lg-auto img-fluid"
+                            alt="Bootstrap Themes" loading="lazy">
+                    </div>
+                </div>
+                <div class="col-8 destinantion-form" style="margin-top: -300px;">
+                    <div class="card-form-destinantion p-3 ">
                         <form action="">
                             <div class="d-lg-flex justify-content-between align-items-center">
-
-                                <div class="d-flex align-items-center" style="width: 100%;">
+                                <div class="d-flex align-items-center" style="width: 100%; margin-left:10px;">
                                     <div>
                                         <img src="{{ asset('icons/Map_Pin.png') }}" alt="">
                                     </div>
                                     <div class="form-floating">
                                         <select class="form-select" id="floatingSelectGrid"
                                             aria-label="Floating label select example">
-                                            <option selected>Open this select menu</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
+                                            <option selected="true" disabled="disabled" value="">Select travel
+                                                destination</option>
+                                            @foreach ($destination as $item)
+                                                <option value="{{ $item->id }}" data-barang="{{ $item->stok }}">
+                                                    {{ $item->location }}</option>
+                                            @endforeach
                                         </select>
                                         <label for="floatingSelectGrid">Location</label>
                                     </div>
@@ -59,17 +85,6 @@
                         </form>
                     </div>
                 </div>
-                <div class="col-lg-5 image-hero">
-                    <div class="image-travel-front">
-                        <img src="{{ asset('images/img-new-travel-1.jpg') }}" class="d-block mx-lg-auto img-fluid"
-                            alt="Bootstrap Themes" loading="lazy">
-                    </div>
-
-                    <div class="image-travel-back">
-                        <img src="{{ asset('images/travel-2.jpg') }}" class="d-block mx-lg-auto img-fluid"
-                            alt="Bootstrap Themes" loading="lazy">
-                    </div>
-                </div>
             </div>
         </div>
         {{-- end hero --}}
@@ -83,30 +98,16 @@
                     <p style="color:grey; font-size: 1rem;">Try a variety of benefits when <br>using our
                         services.</p>
                 </div>
-
-                <div class="feature col-lg-3">
-                    <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
-                        <img src="{{ asset('icons/destination.png') }}" alt="Icon" style="height: 60px;">
+                @foreach ($feature as $item)
+                    <div class="feature col-lg-3">
+                        <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+                            <img src="{{ asset($item->image) }}" alt="Icon" style="height: 60px;">
+                        </div>
+                        <h3>{{ $item->title }}</h3>
+                        <p style="color:grey; font-size: 1rem;">{{ $item->desc }}</p>
                     </div>
-                    <h3>Lot Of Choices</h3>
-                    <p style="color:grey; font-size: 1rem;">Total 450+ destinations that we work with.</p>
-                </div>
+                @endforeach
 
-                <div class="feature col-lg-3">
-                    <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
-                        <img src="{{ asset('icons/luggage.png') }}" alt="Icon" style="height: 60px;">
-                    </div>
-                    <h3>Best Tour Guide</h3>
-                    <p style="color:grey; font-size: 1rem;">Out tour guide 15+ years experience.</p>
-                </div>
-
-                <div class="feature col-lg-3">
-                    <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
-                        <img src="{{ asset('icons/postcard.png') }}" alt="Icon" style="height: 60px;">
-                    </div>
-                    <h3>Easy Booking</h3>
-                    <p style="color:grey; font-size: 1rem;">With an easy and fast ticket purchase process.</p>
-                </div>
             </div>
         </div>
         {{-- end fiture --}}

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Destination;
+use App\Models\Feature;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +25,26 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $title = 'Home Page';
+
+        $destination = Destination::all();
+        $feature = Feature::all();
+
+        return view('welcome', compact('destination', 'title', 'feature'));
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function dashboard()
+    {
+        $title = 'Dashboard Page';
+
+        $destination = Destination::all();
+        $feature = Feature::all();
+
+        return view('home', compact('destination', 'title', 'feature'));
     }
 }

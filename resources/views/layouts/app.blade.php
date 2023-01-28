@@ -8,13 +8,15 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ isset($title) ? $title : 'Magnus Travel' }}</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
+    <!-- Bootsrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js', 'resources/css/custom.css'])
 
@@ -46,20 +48,34 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav menu-nav ms-auto me-2">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">Our Tours</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">Reviews</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">Contact Us</a>
-                        </li>
-                    </ul>
+                    @guest
+                        <ul class="navbar-nav menu-nav ms-auto me-2">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">Our Tours</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">Reviews</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">Contact Us</a>
+                            </li>
+                        </ul>
+                    @else
+                        <ul class="navbar-nav menu-nav ms-auto me-2">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('destination') }}">Destinations</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('feature') }}">Features</a>
+                            </li>
+                        </ul>
+                    @endguest
                     <ul class="navbar-nav">
                         <!-- Authentication Links -->
                         @guest
