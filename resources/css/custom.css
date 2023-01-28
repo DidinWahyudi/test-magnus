@@ -12,7 +12,8 @@
     box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
 }
 
-.section-hero {
-    background: url('images/img-gradient.jpg');
-    background-size: cover;
+.form-control,
+.form-select {
+    background-color: transparent;
+    border: unset;
 }
