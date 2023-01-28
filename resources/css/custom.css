@@ -12,8 +12,50 @@
     box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
 }
 
-.form-control,
-.form-select {
+.card-form-destinantion .form-control,
+.card-form-destinantion .form-select {
     background-color: transparent;
     border: unset;
+}
+
+.image-travel-front img {
+    border: 5px solid white;
+    border-radius: 195px/195px;
+    width: 400px;
+    height: 600px;
+}
+
+.image-travel-back img {
+    border: 5px solid white;
+    border-radius: 145px/145px;
+    width: 300px;
+    height: 500px;
+}
+
+.btn-search {
+    height: 50px;
+    width: 50px;
+    background-color: #ffa335;
+    border: unset;
+    border-radius: 99px;
+}
+
+/* image hero */
+.image-hero {
+    position: relative;
+    border: red 2px solid;
+    height: 650px;
+}
+
+.image-travel-front {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+}
+
+.image-travel-back {
+    position: absolute;
+    top: 150px;
+    right: 0px;
 }
