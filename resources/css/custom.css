@@ -220,6 +220,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     border-bottom: 2px solid #ffa335;
 }
 
+.active a {
+    color: #ffa335;
+}
+
+.active a:hover {
+    color: #ffa335;
+}
+
 @media (max-width: 576px) {
     .image-travel-front img {
         border: 5px solid white;

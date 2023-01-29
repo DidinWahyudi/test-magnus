@@ -117,7 +117,7 @@
                             </div>
                             <div>
                                 <a class="btn btn-sm btn-primary px-4 text-light"
-                                    href="{{ route('content.edit', $subTitleHero->id) }}">Edit</a>
+                                    href="{{ route('content.edit', $subTitleFeature->id) }}">Edit</a>
                             </div>
                         </div>
                         <div class="card-body p-3">
@@ -136,7 +136,7 @@
                             </div>
                             <div>
                                 <a class="btn btn-sm btn-primary px-4 text-light"
-                                    href="{{ route('content.edit', $subTitleHero->id) }}">Edit</a>
+                                    href="{{ route('content.edit', $titleFeature->id) }}">Edit</a>
                             </div>
                         </div>
                         <div class="card-body p-3">
@@ -155,7 +155,7 @@
                             </div>
                             <div>
                                 <a class="btn btn-sm btn-primary px-4 text-light"
-                                    href="{{ route('content.edit', $subTitleHero->id) }}">Edit</a>
+                                    href="{{ route('content.edit', $contentFeature->id) }}">Edit</a>
                             </div>
                         </div>
                         <div class="card-body p-3">
