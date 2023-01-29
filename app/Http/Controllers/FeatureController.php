@@ -40,7 +40,7 @@ class FeatureController extends Controller
     public function store(Request $request)
     {
         //menentukan folder penyimpanan file
-        $folderImage = public_path('images/icons');
+        $folderImage = public_path('icons');
 
         //request dari form
         $foto = $request->file('image');
@@ -49,22 +49,17 @@ class FeatureController extends Controller
         $extensionFile = $foto->getClientOriginalExtension();
 
         //mengganti nama file & pindahkan ke folder
-        $nama_foto = 'images/icons' . time() . 'FEATURE.' . $extensionFile;
+        $nama_foto = 'icons/' . time() . 'FEATURE.' . $extensionFile;
         $foto->move($folderImage, $nama_foto);
 
         $feature = Feature::create([
-            'division_name' => $request->desc,
-            'image'          => $nama_foto,
-            'desc'          => $request->desc,
+            'title'     => $request->title,
+            'image'     => $nama_foto,
+            'desc'      => $request->desc,
         ]);
 
-        if ($feature) {
-            //redirect dengan pesan sukses
-            return redirect()->route('feature')->with(['success' => 'Data Berhasil Disimpan!']);
-        } else {
-            //redirect dengan pesan error
-            return redirect()->route('feature')->with(['error' => 'Data Gagal Disimpan!']);
-        }
+        return redirect()->route('feature')->with(['success' => 'Data Berhasil Disimpan!']);
+
     }
 
     /**
@@ -97,9 +92,37 @@ class FeatureController extends Controller
      * @param  \App\Models\feature  $feature
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, feature $feature)
+    public function update(Request $request, $id)
     {
-        //
+
+        if($request->file('image') == null){
+            //request dari form
+            $nama_foto = $request->input('imageold');
+         } else{
+            //request dari form
+            $foto = $request->file('image');
+
+            //menentukan folder penyimpanan file
+            $folderImage = public_path('icons');
+
+            //request dari form
+            $foto = $request->file('image');
+
+            //ambil extensi file
+            $extensionFile = $foto->getClientOriginalExtension();
+
+            //mengganti nama file & pindahkan ke folder
+            $nama_foto = 'icons/' . time() . 'FEATURE.' . $extensionFile;
+            $foto->move($folderImage, $nama_foto);
+         }
+
+        Feature::where('id', '=', $id)->update([
+            'title'     => $request->title,
+            'image'     => $nama_foto,
+            'desc'      => $request->desc,
+        ]);
+
+        return redirect('feature')->with(['success' => 'Data Berhasil diubah']);
     }
 
     /**

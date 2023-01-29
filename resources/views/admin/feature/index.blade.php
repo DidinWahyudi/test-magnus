@@ -5,11 +5,7 @@
         <div class="container pt-3 pt-lg-5">
             <div class="row justify-content-center">
 
-                <div class="col-md-8 mb-3">
-                    <div class="section-header fw-bold fs-4">
-                        List Feature
-                    </div>
-                </div>
+
 
                 <div class="col-md-8 mb-3">
                     @if ($message = Session::get('success'))
@@ -20,12 +16,19 @@
                     @endif
 
                     <div class="card">
-                        <div class="card-body">
 
-                            <div class="mb-2">
-                                <a href="{{ route('feature.create') }}" class="btn btn-primary text-light px-4">Add
+                        <div class="card-header d-flex justify-content-between align-items-center"
+                            style="font-weight: bold;">
+                            <div style="font-size: 1.1rem;">
+                                List Feature
+                            </div>
+                            <div>
+                                <a href="{{ route('feature.create') }}" class="btn btn-sm btn-primary text-light px-4">Add
                                     Feature</a>
                             </div>
+                        </div>
+
+                        <div class="card-body">
                             <table class="table">
                                 <thead>
                                     <tr>

@@ -14,7 +14,7 @@
                         <img src="{{ asset('icons/airplane.png') }}" alt="bubble" style="height: 45px;">
                     </div>
                     <div class="image-travel-front">
-                        <img src="{{ asset('images/img-new-travel-1.jpg') }}" class="d-block mx-lg-auto img-fluid"
+                        <img src="{{ asset($imageFront->image) }}" class="d-block mx-lg-auto img-fluid"
                             alt="Bootstrap Themes" loading="lazy">
                     </div>
                     <div class="bubble-2 p-3">
@@ -24,7 +24,7 @@
                         <img src="{{ asset('icons/ship.png') }}" alt="bubble" style="height: 45px;">
                     </div>
                     <div class="image-travel-back">
-                        <img src="{{ asset('images/travel-2.jpg') }}" class="d-block mx-lg-auto img-fluid"
+                        <img src="{{ asset($imageBack->image) }}" class="d-block mx-lg-auto img-fluid"
                             alt="Bootstrap Themes" loading="lazy">
                     </div>
                 </div>

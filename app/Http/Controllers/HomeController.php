@@ -28,23 +28,25 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $title = 'Home Page';
+        $title = 'Home';
 
         // section hero
         $subTitleHero = $this->content('sub-title-hero');
         $titleHero = $this->content('title-hero');
+        $imageFront = $this->content('image-hero-front');
+        $imageBack = $this->content('image-hero-back');
 
         // section feature
         $subTitleFeature = $this->content('sub-title-feature');
         $titleFeature = $this->content('title-feature');
         $contentFeature = $this->content('content-feature');
 
+
         $destination = Destination::all();
         $feature = Feature::all();
 
-        return view('welcome', compact('subTitleFeature','titleFeature','contentFeature','destination', 'title', 'feature', 'subTitleHero', 'titleHero'));
+        return view('welcome', compact('imageFront','imageBack','subTitleFeature','titleFeature','contentFeature','destination', 'title', 'feature', 'subTitleHero', 'titleHero'));
     }
-
     /**
      * Show the application dashboard.
      *
@@ -57,16 +59,19 @@ class HomeController extends Controller
         // section hero
         $subTitleHero = $this->content('sub-title-hero');
         $titleHero = $this->content('title-hero');
+        $imageFront = $this->content('image-hero-front');
+        $imageBack = $this->content('image-hero-back');
 
         // section feature
         $subTitleFeature = $this->content('sub-title-feature');
         $titleFeature = $this->content('title-feature');
         $contentFeature = $this->content('content-feature');
 
+
         $destination = Destination::all();
         $feature = Feature::all();
 
-        return view('home', compact('subTitleFeature','titleFeature','contentFeature','destination', 'title', 'feature', 'subTitleHero', 'titleHero'));
+        return view('home', compact('imageFront','imageBack','subTitleFeature','titleFeature','contentFeature','destination', 'title', 'feature', 'subTitleHero', 'titleHero'));
     }
 
     /**

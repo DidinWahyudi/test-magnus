@@ -40,6 +40,7 @@
     border-radius: 195px/195px;
     width: 400px;
     height: 600px;
+    object-fit: cover;
 }
 
 .image-travel-back img {
@@ -47,6 +48,7 @@
     border-radius: 145px/145px;
     width: 300px;
     height: 500px;
+    object-fit: cover;
 }
 
 .btn-search {
@@ -135,4 +137,34 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     border-left: 2px solid rgba(181, 181, 181, 0.25);
     height: 40px;
     margin-right: 25px;
+}
+
+.alert {
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+    border: unset;
+}
+
+.element.style {
+    font-weight: bold;
+}
+
+.card-header:first-child {
+    border-radius: var(--bs-card-inner-border-radius) var(--bs-card-inner-border-radius) 0 0;
+}
+
+.align-items-center {
+    align-items: center !important;
+}
+
+.justify-content-between {
+    justify-content: space-between !important;
+}
+
+.d-flex {
+    display: flex !important;
+}
+
+.card-header {
+    background-color: unset;
 }

@@ -57,7 +57,8 @@ class ContentController extends Controller
      */
     public function edit(Content $content)
     {
-        //
+        $title = 'content Form';
+        return view('admin.content.form', compact('title', 'content'));
     }
 
     /**
@@ -67,9 +68,44 @@ class ContentController extends Controller
      * @param  \App\Models\Content  $content
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Content $content)
+    public function update(Request $request, $id)
     {
-        //
+        if($request->file('image') == null){
+            //request dari form
+            $nama_foto = $request->input('imageold');
+        } else{
+            //request dari form
+            $foto = $request->file('image');
+
+            //menentukan folder penyimpanan file
+            $folderImage = public_path('images');
+
+            //request dari form
+            $foto = $request->file('image');
+
+            //ambil extensi file
+            $extensionFile = $foto->getClientOriginalExtension();
+
+            //mengganti nama file & pindahkan ke folder
+            $nama_foto = 'images/' . time() . 'IMG.' . $extensionFile;
+            $foto->move($folderImage, $nama_foto);
+        }
+
+        if($request->input('content') == null){
+            $content = null;
+        }else{
+            $content = $request->input('content');
+        }
+
+
+
+        Content::where('id', '=', $id)->update([
+
+            'image'         => $nama_foto,
+            'content'       => $content,
+        ]);
+
+        return redirect('dashboard')->with(['success' => 'Data Berhasil diubah']);
     }
 
     /**

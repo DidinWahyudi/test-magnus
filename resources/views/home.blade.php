@@ -12,40 +12,73 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
-                    <div class="card">
+                <div class="col-md-6">
+                    <div class="card mb-4">
                         <div class="card-header d-flex justify-content-between align-items-center" style="font-weight: bold;">
+                            <div style="font-size: 1.1rem;">
+                                Image
+                            </div>
+                            <div>
+                                <a class="btn btn-sm btn-primary px-4 text-light"
+                                    href="{{ route('content.edit', $imageFront->id) }}">Edit</a>
+                            </div>
+                        </div>
+                        <div class="card-body p-3">
+                            <p style="color:grey; font-size: 1rem;">{{ $imageFront->image }}</p>
+                            <p style="color:grey; font-size: 1rem;">{{ $imageBack->image }}</p>
+                        </div>
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-header d-flex justify-content-between align-items-center"
+                            style="font-weight: bold;">
+                            <div style="font-size: 1.1rem;">
+                                Image
+                            </div>
+                            <div>
+                                <a class="btn btn-sm btn-primary px-4 text-light"
+                                    href="{{ route('content.edit', $imageFront->id) }}">Edit</a>
+                            </div>
+                        </div>
+                        <div class="card-body p-3">
+                            <p style="color:grey; font-size: 1rem;">{{ $imageFront->image }}</p>
+                            <p style="color:grey; font-size: 1rem;">{{ $imageBack->image }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-header d-flex justify-content-between align-items-center"
+                            style="font-weight: bold;">
                             <div style="font-size: 1.1rem;">
                                 Sub Title Hero
                             </div>
                             <div>
-                                <a href="{{ route('feature.create') }}" class="btn btn-primary text-light px-4">Edit</a>
+                                <a class="btn btn-sm btn-primary px-4 text-light"
+                                    href="{{ route('content.edit', $subTitleHero->id) }}">Edit</a>
                             </div>
                         </div>
                         <div class="card-body p-3">
-                            <div class="mb-2">
-                                <p style="color:grey; font-size: 1rem;">{!! $subTitleHero->content !!}</p>
-                            </div>
+                            <p style="color:grey; font-size: 1rem;">{!! $subTitleHero->content !!}</p>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
+
+                    <div class="card mb-4">
                         <div class="card-header d-flex justify-content-between align-items-center"
                             style="font-weight: bold;">
                             <div style="font-size: 1.1rem;">
                                 Title Hero
                             </div>
                             <div>
-                                <a href="{{ route('feature.create') }}" class="btn btn-primary text-light px-4">Edit</a>
+                                <a class="btn btn-sm btn-primary px-4 text-light"
+                                    href="{{ route('content.edit', $subTitleHero->id) }}">Edit</a>
                             </div>
                         </div>
                         <div class="card-body p-3">
-                            <div class="mb-2">
-                                <p style="color:grey; font-size: 1rem;">{!! $titleHero->content !!}</p>
-                            </div>
+                            <p style="color:grey; font-size: 1rem;">{!! $titleHero->content !!}</p>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -69,7 +102,8 @@
                                 Sub Title Feture
                             </div>
                             <div>
-                                <a href="{{ route('feature.create') }}" class="btn btn-primary text-light px-4">Edit</a>
+                                <a class="btn btn-sm btn-primary px-4 text-light"
+                                    href="{{ route('content.edit', $subTitleHero->id) }}">Edit</a>
                             </div>
                         </div>
                         <div class="card-body p-3">
@@ -87,7 +121,8 @@
                                 Title Feature
                             </div>
                             <div>
-                                <a href="{{ route('feature.create') }}" class="btn btn-primary text-light px-4">Edit</a>
+                                <a class="btn btn-sm btn-primary px-4 text-light"
+                                    href="{{ route('content.edit', $subTitleHero->id) }}">Edit</a>
                             </div>
                         </div>
                         <div class="card-body p-3">
@@ -105,7 +140,8 @@
                                 Content Feature
                             </div>
                             <div>
-                                <a href="{{ route('feature.create') }}" class="btn btn-primary text-light px-4">Edit</a>
+                                <a class="btn btn-sm btn-primary px-4 text-light"
+                                    href="{{ route('content.edit', $subTitleHero->id) }}">Edit</a>
                             </div>
                         </div>
                         <div class="card-body p-3">
