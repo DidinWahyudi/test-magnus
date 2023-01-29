@@ -85,7 +85,7 @@
                             </div>
                             <div>
                                 <a class="btn btn-sm btn-primary px-4 text-light"
-                                    href="{{ route('content.edit', $subTitleHero->id) }}">Edit</a>
+                                    href="{{ route('content.edit', $titleHero->id) }}">Edit</a>
                             </div>
                         </div>
                         <div class="card-body p-3">

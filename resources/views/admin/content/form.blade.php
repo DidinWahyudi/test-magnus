@@ -89,9 +89,9 @@
 
                                 <div class="row mb-0">
                                     <div class="col-md-6 offset-md-4">
-                                        <button type="submit" class="btn btn-primary  slide_right px-4">
+                                        <button type="submit" class="btn btn-primary  btn-sm px-4">
                                             Update</button>
-                                        <a href="{{ route('dashboard') }}" class="btn btn-secondary me-2 px-4">
+                                        <a href="{{ route('dashboard') }}" class="btn btn-secondary btn-sm me-2 px-4">
                                             Back</a>
                                     </div>
                                 </div>
