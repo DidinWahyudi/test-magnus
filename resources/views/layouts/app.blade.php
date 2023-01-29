@@ -111,7 +111,7 @@
                 position: absolute;
                 right: 0;
                 bottom: 25%;
-                width: 800px;
+                width: 900px;
                 height: 300px;
                 background-image: url('{{ asset('images/line.png') }}');
                 background-size: contain;
@@ -125,9 +125,9 @@
                 content: '';
                 position: absolute;
                 right: 0;
-                bottom: 45%;
-                width: 1000px;
-                height: 400px;
+                bottom: 33%;
+                width: 900px;
+                height: 350px;
                 background-image: url('{{ asset('images/line.png') }}');
                 background-size: contain;
                 background-position: bottom right;
