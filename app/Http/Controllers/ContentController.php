@@ -57,7 +57,7 @@ class ContentController extends Controller
      */
     public function edit(Content $content)
     {
-        $title = 'content Form';
+        $title = 'Content Form';
         return view('admin.content.form', compact('title', 'content'));
     }
 

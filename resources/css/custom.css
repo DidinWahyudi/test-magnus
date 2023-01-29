@@ -168,3 +168,12 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .card-header {
     background-color: unset;
 }
+
+
+.img-asset-dshboard {
+    border: 5px solid white;
+    border-radius: 99px/99px;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+}

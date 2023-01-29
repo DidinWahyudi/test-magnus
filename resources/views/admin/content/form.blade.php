@@ -4,14 +4,17 @@
     <section class="mt-5">
         <div class="container pt-3 pt-lg-5">
             <div class="row justify-content-center">
-                <div class="col-md-8 mb-3">
-                    <div class="section-header fw-bold fs-4">
-                        Update Cpontent
-                    </div>
-                </div>
+
+
                 <div class="col-md-8">
 
-                    <div class="card p-3">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between align-items-center" style="font-weight: bold;">
+                            <div style="font-size: 1.1rem;">
+                                Update Content
+                            </div>
+
+                        </div>
 
                         <div class="card-body">
 
