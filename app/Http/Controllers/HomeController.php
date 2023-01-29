@@ -4,19 +4,22 @@ namespace App\Http\Controllers;
 
 use App\Models\Destination;
 use App\Models\Feature;
+use App\Models\Content;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+
+
+    // /**
+    //  * Create a new controller instance.
+    //  *
+    //  * @return void
+    //  */
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 
     /**
      * Show the application dashboard.
@@ -27,10 +30,19 @@ class HomeController extends Controller
     {
         $title = 'Home Page';
 
+        // section hero
+        $subTitleHero = $this->content('sub-title-hero');
+        $titleHero = $this->content('title-hero');
+
+        // section feature
+        $subTitleFeature = $this->content('sub-title-feature');
+        $titleFeature = $this->content('title-feature');
+        $contentFeature = $this->content('content-feature');
+
         $destination = Destination::all();
         $feature = Feature::all();
 
-        return view('welcome', compact('destination', 'title', 'feature'));
+        return view('welcome', compact('subTitleFeature','titleFeature','contentFeature','destination', 'title', 'feature', 'subTitleHero', 'titleHero'));
     }
 
     /**
@@ -40,11 +52,31 @@ class HomeController extends Controller
      */
     public function dashboard()
     {
-        $title = 'Dashboard Page';
+       $title = 'Dashboard';
+
+        // section hero
+        $subTitleHero = $this->content('sub-title-hero');
+        $titleHero = $this->content('title-hero');
+
+        // section feature
+        $subTitleFeature = $this->content('sub-title-feature');
+        $titleFeature = $this->content('title-feature');
+        $contentFeature = $this->content('content-feature');
 
         $destination = Destination::all();
         $feature = Feature::all();
 
-        return view('home', compact('destination', 'title', 'feature'));
+        return view('home', compact('subTitleFeature','titleFeature','contentFeature','destination', 'title', 'feature', 'subTitleHero', 'titleHero'));
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function content($title = null)
+    {
+        $data = Content::where('title','=',$title)->first();
+        return $data;
     }
 }

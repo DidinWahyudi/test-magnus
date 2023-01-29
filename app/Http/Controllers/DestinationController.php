@@ -76,9 +76,12 @@ class DestinationController extends Controller
      * @param  \App\Models\Destination  $destination
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Destination $destination)
+     public function update(Request $request, $id)
     {
-        //
+        Destination::where('id', '=', $id)->update([
+            'location' => $request->location,
+        ]);
+        return redirect('destination')->with(['success' => 'Data Berhasil diubah']);
     }
 
     /**
@@ -87,8 +90,10 @@ class DestinationController extends Controller
      * @param  \App\Models\Destination  $destination
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Destination $destination)
+    public function destroy($id)
     {
-        //
+        $destination = Destination::where('id', $id)->first();
+        $destination->delete();
+        return redirect('destination')->with(['success' => 'Data Berhasil Dihapus']);
     }
 }

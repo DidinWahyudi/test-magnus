@@ -20,11 +20,11 @@
                         </div>
                     @endif
 
-                    <div class="card p-3">
+                    <div class="card">
                         <div class="card-body">
 
                             <div class="mb-2">
-                                <a href="{{ route('destination.create') }}" class="btn btn-primary text-light">Add
+                                <a href="{{ route('destination.create') }}" class="btn btn-primary text-light px-4">Add
                                     Destination</a>
                             </div>
                             <table class="table">

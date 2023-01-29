@@ -19,6 +19,22 @@
     border: unset;
 }
 
+.card-form-destinantion .form-control:focus {
+    color: unset;
+    background-color: unset;
+    border-color: unset;
+    outline: unset;
+    box-shadow: unset;
+}
+
+.card-form-destinantion .form-select:focus {
+    color: unset;
+    background-color: unset;
+    border-color: unset;
+    outline: unset;
+    box-shadow: unset;
+}
+
 .image-travel-front img {
     border: 5px solid white;
     border-radius: 195px/195px;
@@ -90,7 +106,6 @@
     background-color: white;
     border: 4px solid white;
     border-radius: 99px;
-
 }
 
 .destinantion-form {
@@ -102,4 +117,22 @@
     box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
     border: unset;
     border-radius: 12px;
+}
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+    position: absolute;
+    left: -21px;
+    top: 20px;
+    z-index: 3;
+    transform: scale(1.7);
+
+}
+
+.garis-vertical {
+    border-left: 2px solid rgba(181, 181, 181, 0.25);
+    height: 40px;
+    margin-right: 25px;
 }

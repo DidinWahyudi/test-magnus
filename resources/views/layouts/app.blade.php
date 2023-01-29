@@ -51,7 +51,7 @@
                     @guest
                         <ul class="navbar-nav menu-nav ms-auto me-2">
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">Home</a>
+                                <a class="nav-link" href="{{ route('home') }}">Home</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">Our Tours</a>
@@ -116,7 +116,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main>
             @yield('content')
         </main>
     </div>

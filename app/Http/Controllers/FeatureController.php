@@ -27,7 +27,8 @@ class FeatureController extends Controller
      */
     public function create()
     {
-        //
+        $title = 'Feature Form';
+        return view('admin.feature.form', compact('title'));
     }
 
     /**
@@ -38,7 +39,32 @@ class FeatureController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //menentukan folder penyimpanan file
+        $folderImage = public_path('images/icons');
+
+        //request dari form
+        $foto = $request->file('image');
+
+        //ambil extensi file
+        $extensionFile = $foto->getClientOriginalExtension();
+
+        //mengganti nama file & pindahkan ke folder
+        $nama_foto = 'images/icons' . time() . 'FEATURE.' . $extensionFile;
+        $foto->move($folderImage, $nama_foto);
+
+        $feature = Feature::create([
+            'division_name' => $request->desc,
+            'image'          => $nama_foto,
+            'desc'          => $request->desc,
+        ]);
+
+        if ($feature) {
+            //redirect dengan pesan sukses
+            return redirect()->route('feature')->with(['success' => 'Data Berhasil Disimpan!']);
+        } else {
+            //redirect dengan pesan error
+            return redirect()->route('feature')->with(['error' => 'Data Gagal Disimpan!']);
+        }
     }
 
     /**
@@ -60,7 +86,8 @@ class FeatureController extends Controller
      */
     public function edit(feature $feature)
     {
-        //
+        $title = 'Feature Form';
+        return view('admin.feature.form', compact('title', 'feature'));
     }
 
     /**
@@ -81,8 +108,10 @@ class FeatureController extends Controller
      * @param  \App\Models\feature  $feature
      * @return \Illuminate\Http\Response
      */
-    public function destroy(feature $feature)
+     public function destroy($id)
     {
-        //
+        $feature = Feature::where('id', $id)->first();
+        $feature->delete();
+        return redirect('feature')->with(['success' => 'Data Berhasil Dihapus']);
     }
 }

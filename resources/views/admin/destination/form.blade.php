@@ -9,12 +9,12 @@
                         @if (@$destination->exists)
                             Update
                             @php
-                                $aksi = 'Edit';
+                                $aksi = 'Update';
                             @endphp
                         @else
                             Add
                             @php
-                                $aksi = 'Tambah';
+                                $aksi = 'Submit';
                             @endphp
                         @endif
                         Destination
@@ -53,7 +53,7 @@
                                 <div class="col-md-6 offset-md-4">
                                     {{-- <a href="{{ route('transaksi') }}" class="btn btn-secondary me-2 slide_right">
                                     Back</a> --}}
-                                    <button type="submit" class="btn btn-primary  slide_right">
+                                    <button type="submit" class="btn btn-primary  slide_right px-4">
                                         {{ $aksi }}</button>
                                 </div>
                             </div>

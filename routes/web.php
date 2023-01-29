@@ -23,14 +23,23 @@ use App\Http\Controllers\DestinationController;
 
 Auth::routes();
 
-Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
+Route::middleware('auth')->group(function () {
 
-//feature
-Route::resource('/feature', FeatureController::class);
-Route::get('/feature', [FeatureController::class, 'index'])->name('feature');
+    Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
 
-//destination
-Route::resource('/destination', DestinationController::class);
-Route::get('/destination', [DestinationController::class, 'index'])->name('destination');
+    //content
+    Route::resource('/content', ContentController::class);
+    Route::get('/content', [ContentController::class, 'index'])->name('content');
+
+    //feature
+    Route::resource('/feature', FeatureController::class);
+    Route::get('/feature', [FeatureController::class, 'index'])->name('feature');
+
+    //destination
+    Route::resource('/destination', DestinationController::class);
+    Route::get('/destination', [DestinationController::class, 'index'])->name('destination');
+
+});
