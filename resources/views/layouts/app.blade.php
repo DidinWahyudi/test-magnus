@@ -25,12 +25,76 @@
             font-family: Mermaid;
             src: url('{{ public_path('fonts/Mermaid.tff') }}');
         }
+
+
+
+        .section-hero {
+            background-image: url('{{ asset('images/bg-new-lite.jpg') }}');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .section-hero::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 300px;
+            height: 150px;
+            background-image: url('{{ asset('images/air.png') }}');
+            background-size: contain;
+            background-position: center left;
+            background-repeat: no-repeat;
+        }
+
+        .section-hero::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            bottom: 40%;
+            width: 1000px;
+            height: 400px;
+            background-image: url('{{ asset('images/line.png') }}');
+            background-size: contain;
+            background-position: center left;
+            background-repeat: no-repeat;
+        }
+
+        @media (max-width: 576px) {
+            .section-hero::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 950px;
+                width: 250px;
+                height: 100px;
+                background-image: url('{{ asset('images/air.png') }}');
+                background-size: contain;
+                background-position: center left;
+                background-repeat: no-repeat;
+            }
+
+            .section-hero::before {
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 500px;
+                width: 700px;
+                height: 500px;
+                background-image: url('{{ asset('images/line.png') }}');
+                background-size: contain;
+                background-position: top left;
+                background-repeat: no-repeat;
+            }
+
+        }
     </style>
 </head>
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light fixed-top">
+        <nav id="navbar" class="navbar fixed-top navbar-expand-md navbar-light">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <img class="logo" src="{{ asset('images/Logo.png') }}" alt="Logo" style="height: 50px;">
@@ -50,7 +114,7 @@
                     <!-- Right Side Of Navbar -->
                     @guest
                         <ul class="navbar-nav menu-nav ms-auto me-2">
-                            <li class="nav-item">
+                            <li class="nav-item @if (Request::is('/') || Request::is('home')) active @endif">
                                 <a class="nav-link" href="{{ route('home') }}">Home</a>
                             </li>
                             <li class="nav-item">
@@ -65,13 +129,16 @@
                         </ul>
                     @else
                         <ul class="navbar-nav menu-nav ms-auto me-2">
-                            <li class="nav-item">
+                            <li class="nav-item @if (Request::is('/') || Request::is('home')) active @endif">
+                                <a class="nav-link" href="{{ route('home') }}">Home</a>
+                            </li>
+                            <li class="nav-item @if (Request::is('dashboard')) active @endif">
                                 <a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item @if (Request::is('destination')) active @endif">
                                 <a class="nav-link" href="{{ route('destination') }}">Destinations</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item @if (Request::is('feature')) active @endif">
                                 <a class="nav-link" href="{{ route('feature') }}">Features</a>
                             </li>
                         </ul>
@@ -92,7 +159,7 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item dropdown">
+                            {{-- <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
@@ -109,6 +176,18 @@
                                         @csrf
                                     </form>
                                 </div>
+                            </li> --}}
+
+                            <li class="nav-item">
+                                <a class="btn btn-outline-dark px-4" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
                             </li>
                         @endguest
                     </ul>
@@ -121,5 +200,22 @@
         </main>
     </div>
 </body>
+
+
+<script>
+    const navbar = document.getElementById('navbar')
+    const onScroll = () => {
+        // Get scroll value
+        const scroll = document.documentElement.scrollTop
+        // If scroll value is more than 0 - add class
+        if (scroll > 100) {
+            navbar.classList.add("bg-light");
+        } else {
+            navbar.classList.remove("bg-light");
+        }
+    }
+    // Use the function
+    window.addEventListener('scroll', onScroll)
+</script>
 
 </html>

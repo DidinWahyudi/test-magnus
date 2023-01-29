@@ -177,3 +177,137 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     height: 120px;
     object-fit: cover;
 }
+
+.destinantion-form {
+    margin-top: -315px;
+}
+
+.title-hero {
+    font-size: 4rem;
+}
+
+.sub-title-hero {
+    font-size: 1rem;
+}
+
+.location {
+    margin-left: 10px;
+}
+
+.title-hero {
+    position: relative;
+}
+
+.camera {
+    position: absolute;
+    left: 360px;
+    top: -23px;
+}
+
+.feature-item:nth-child(2) {
+    margin-top: 50px;
+
+}
+
+.map-poin {
+    position: absolute;
+    left: 345px;
+    top: -18px;
+    z-index: 4;
+}
+
+.active {
+    border-bottom: 2px solid #ffa335;
+}
+
+@media (max-width: 576px) {
+    .image-travel-front img {
+        border: 5px solid white;
+        border-radius: 144px/144px;
+        width: 300px;
+        height: 450px;
+        object-fit: cover;
+    }
+
+    .image-travel-back img {
+        border: 5px solid white;
+        border-radius: 99px/99px;
+        width: 200px;
+        height: 310px;
+        object-fit: cover;
+    }
+
+    .bubble-1 {
+        position: absolute;
+        top: 20px;
+        left: 10px;
+        z-index: 3;
+        background-color: #EEF0FF;
+        border: 4px solid white;
+        border-radius: 99px;
+
+    }
+
+    .bubble-2 {
+        position: absolute;
+        top: 50px;
+        left: 260px;
+        z-index: 3;
+        background-color: #FFF1FF;
+        border: 4px solid white;
+        border-radius: 99px;
+
+    }
+
+    .bubble-3 {
+        position: absolute;
+        top: 450px;
+        left: 300px;
+        z-index: 3;
+        background-color: white;
+        border: 4px solid white;
+        border-radius: 99px;
+    }
+
+    .destinantion-form {
+        margin-top: 0px;
+    }
+
+    .title-hero {
+        font-size: 3.3rem;
+    }
+
+    .sub-title-hero {
+        font-size: 0.9rem;
+    }
+
+    .card-form-destinantion {
+        border: unset;
+        border-radius: 12px;
+        box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+        background-color: white;
+    }
+
+    .location {
+        margin-left: 0px;
+    }
+
+    .camera {
+        position: absolute;
+        left: 300px;
+        top: -28px;
+    }
+
+    .feature-item:nth-child(2) {
+        margin-top: 0px;
+
+    }
+
+    .map-poin {
+        position: absolute;
+        left: 260px;
+        top: -60px;
+        z-index: 4;
+    }
+
+}
