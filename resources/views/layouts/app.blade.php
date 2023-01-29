@@ -52,12 +52,12 @@
             content: '';
             position: absolute;
             right: 0;
-            bottom: 40%;
-            width: 1000px;
+            bottom: 30%;
+            width: 900px;
             height: 400px;
             background-image: url('{{ asset('images/line.png') }}');
             background-size: contain;
-            background-position: center left;
+            background-position: bottom right;
             background-repeat: no-repeat;
         }
 
@@ -88,6 +88,51 @@
                 background-repeat: no-repeat;
             }
 
+        }
+
+        @media (min-width: 992px) {
+            .section-hero::before {
+                content: '';
+                position: absolute;
+                right: 0;
+                bottom: 25%;
+                width: 700px;
+                height: 300px;
+                background-image: url('{{ asset('images/line.png') }}');
+                background-size: contain;
+                background-position: bottom right;
+                background-repeat: no-repeat;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .section-hero::before {
+                content: '';
+                position: absolute;
+                right: 0;
+                bottom: 25%;
+                width: 800px;
+                height: 300px;
+                background-image: url('{{ asset('images/line.png') }}');
+                background-size: contain;
+                background-position: bottom right;
+                background-repeat: no-repeat;
+            }
+        }
+
+        @media (min-width: 1400px) {
+            .section-hero::before {
+                content: '';
+                position: absolute;
+                right: 0;
+                bottom: 45%;
+                width: 1000px;
+                height: 400px;
+                background-image: url('{{ asset('images/line.png') }}');
+                background-size: contain;
+                background-position: bottom right;
+                background-repeat: no-repeat;
+            }
         }
     </style>
 </head>
